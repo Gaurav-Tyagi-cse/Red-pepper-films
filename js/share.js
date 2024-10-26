@@ -1,0 +1,32 @@
+$(function () {
+    $('.share-button').click(function () {
+        var platform = $(this).data('platform');
+        var currentUrl = window.location.href;
+
+        switch (platform) {
+            case 'facebook':
+                window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl));
+                break;
+            case 'twitter':
+                var tweetText = 'Check out this awesome website!';
+                window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText) + '&url=' + encodeURIComponent(currentUrl));
+                break;
+            case 'whatsapp':
+                var shareText = 'Check out this awesome website: ';
+                window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(shareText + currentUrl));
+                break;
+            default:
+                break;
+        }
+    });
+});
+
+
+
+
+const video = document.getElementById('cam');
+const canvas = document.getElementById('canvas');
+const photo = document.getElementById('photo');
+const snapBtn = document.getElementById('snapBtn');
+
+
